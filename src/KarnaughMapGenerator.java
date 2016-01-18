@@ -59,7 +59,7 @@ public class KarnaughMapGenerator {
             kMap.show();
             System.out.println("Do you wish to change the state representations?");
             char changeStateRep = IOUtil.readString().charAt(0);
-            loop = changeStateRep == 'y';
+            loop = changeStateRep == 'y' || changeStateRep == 'Y';
         } while (loop);
     }
 }
