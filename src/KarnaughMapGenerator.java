@@ -19,9 +19,17 @@ public class KarnaughMapGenerator {
         int[] transitionsFalse = new int[noOfStates];
         for (int i = 0; i < noOfStates; i++) {
             System.out.println("Please enter the destination state for "+ sTable.getAlias(i) + " for a true input:");
-            transitionsTrue[i] = IOUtil.readInt();
+            transitionsTrue[i] = sTable.getState(IOUtil.readString());
+            while (transitionsTrue[i] < 0) {
+                System.out.println("Invalid input, try again");
+                transitionsTrue[i] = sTable.getState(IOUtil.readString());
+            }
             System.out.println("Please enter the destination state for "+ sTable.getAlias(i) + " for a false input:");
-            transitionsFalse[i] = IOUtil.readInt();
+            transitionsFalse[i] = sTable.getState(IOUtil.readString());
+            while (transitionsFalse[i] < 0) {
+                System.out.println("Invalid input, try again");
+                transitionsFalse[i] = sTable.getState(IOUtil.readString());
+            }
             System.out.println("Please enter the state representation for "+ sTable.getAlias(i) + ":");
             stateRep[i] = IOUtil.readInt();
         }

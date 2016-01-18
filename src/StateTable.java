@@ -20,4 +20,14 @@ public class StateTable {
     public int getNoOfStates(){
         return noOfStates;
     }
+
+    public int getState (String alias){
+        for (int i = 0; i < aliases.length; i++) {
+            if (alias.equals(aliases[i])) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
+
