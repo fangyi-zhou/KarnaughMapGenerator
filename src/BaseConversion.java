@@ -9,15 +9,4 @@ public class BaseConversion {
         binary[2] = num >= 4;
         return binary;
     }
-
-    public static int binaryToDenary (boolean[] binary){
-        int denary = 0;
-        for (int i = 0; i < binary.length; i++) {
-            if (binary[i]) {
-                denary += 2 ^ i;
-            }
-        }
-        return denary;
-    }
-
 }

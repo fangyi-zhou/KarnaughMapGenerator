@@ -3,7 +3,6 @@
  */
 public class KarnaughMap {
 
-    private TransitionTable tTable;
     private boolean[][] transitions;
     private char[][][] output = new char[3][4][4];
     private final String[] prefixesVertical = { "00", "01", "11", "10" };
@@ -11,7 +10,6 @@ public class KarnaughMap {
 
 
     public KarnaughMap(TransitionTable tTable){
-        this.tTable = tTable;
         this.transitions = tTable.getTransitions();
         generateMap();
     }
