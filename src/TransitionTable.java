@@ -54,7 +54,7 @@ public class TransitionTable {
     }
 
     public void show(){
-        System.out.println("FRO\t\t\tIN\tD2\tD1\tD0\t\tTO\t\t\tQ2\tQ1\tQ0");
+        System.out.println("FROM\t\t\tIN\tQ2\tQ1\tQ0\t\tTO\t\t\tD2\tD1\tD0");
         for (int i = 0; i < noOfStates; i++){
             System.out.println(stateRep[i] + "\t" + sTable.getAlias(i) + "\t\t0\t"
                     + formulateBinaryOutput(BaseConversion.denaryToBinary(stateRep[i]))

@@ -57,7 +57,7 @@ public class KarnaughMap {
     public void show(){
         for (int i = 0; i < 3; i++){
             System.out.println();
-            System.out.println("Q" + (2 - i));
+            System.out.println("D" + (2 - i));
             System.out.print("\t");
             for (int j = 0; j < 4; j++){
                 System.out.print(prefixesVertical[j] + "\t");
