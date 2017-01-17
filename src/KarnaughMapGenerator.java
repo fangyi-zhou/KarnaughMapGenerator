@@ -14,7 +14,11 @@ public class KarnaughMapGenerator {
         System.out.println("An alias is a name to identify a state.");
         for (int i = 0; i < noOfStates; i++) {
             System.out.println("Please enter the alias for State " + i + ":" );
-            sTable.setAlias(i, IOUtil.readString());
+            String alias = IOUtil.readString();
+            while (!sTable.setAlias(i, alias)) {
+                System.out.println("Alias already exist, try again");
+                alias = IOUtil.readString();
+            }
         }
         int[] stateRep = new int[noOfStates];
         int[] transitionsTrue = new int[noOfStates];
