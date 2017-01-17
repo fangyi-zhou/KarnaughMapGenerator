@@ -1,10 +1,7 @@
-/**
- * Created by fangyi on 17/01/2016.
- */
 public class KarnaughMapGenerator {
 
-    static TransitionTable tTable;
-    static StateTable sTable;
+    private static TransitionTable tTable;
+    private static StateTable sTable;
 
     private static void readData(){
         System.out.println("Please enter the number of states:");

@@ -1,15 +1,12 @@
-/**
- * Created by fangyi on 17/01/2016.
- */
-public class KarnaughMap {
+class KarnaughMap {
 
-    private boolean[][] transitions;
-    private char[][][] output = new char[3][4][4];
+    private final boolean[][] transitions;
+    private final char[][][] output = new char[3][4][4];
     private final String[] prefixesVertical = { "00", "01", "11", "10" };
     private final String[] prefixesHorizontal = { "00", "01", "11", "10" };
 
 
-    public KarnaughMap(TransitionTable tTable){
+    KarnaughMap(TransitionTable tTable){
         this.transitions = tTable.getTransitions();
         generateMap();
     }
@@ -22,10 +19,10 @@ public class KarnaughMap {
 
     private void generateMap(int num){
         initialMap(num);
-        for (int i = 0; i < transitions.length; i++){
-            int vertical = getIdx(transitions[i][2], transitions[i][3]);
-            int horizontal = getIdx(transitions[i][0], transitions[i][1]);
-            char out = getCharOutput(transitions[i][4 + num]);
+        for (boolean[] transition : transitions) {
+            int vertical = getIdx(transition[2], transition[3]);
+            int horizontal = getIdx(transition[0], transition[1]);
+            char out = getCharOutput(transition[4 + num]);
             output[num][horizontal][vertical] = out;
         }
     }
@@ -33,9 +30,9 @@ public class KarnaughMap {
     private int getIdx(boolean x, boolean y){
         if (!x && !y) {
             return 0;
-        } else if (!x && y) {
+        } else if (!x) {
             return 1;
-        } else if (x && y) {
+        } else if (y) {
             return 2;
         } else {
             return 3;
@@ -54,7 +51,7 @@ public class KarnaughMap {
         }
     }
 
-    public void show(){
+    void show(){
         for (int i = 0; i < 3; i++){
             System.out.println();
             System.out.println("D" + (2 - i));
